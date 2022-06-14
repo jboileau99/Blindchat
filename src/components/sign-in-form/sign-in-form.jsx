@@ -1,8 +1,10 @@
-import './sign-in-form.scss'
+import './../sign-up-form/sign-up-form.scss'
 import {useState} from "react";
+import { Link } from "react-router-dom";
 import FormInput from "../form-input/form-input";
 import Button from "../button/button";
 import {signInUserWithEmailAndPassword} from "../../utils/firebase/firebase.utils";
+import { useNavigate } from 'react-router-dom';
 
 const defaultFormFields = {
   email: '',
@@ -13,6 +15,7 @@ const SignInForm = () => {
 
   const [formFields, setFormFields] = useState(defaultFormFields)
   const { email, password } = formFields
+  let navigate = useNavigate();
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
@@ -25,6 +28,8 @@ const SignInForm = () => {
       .then(
         ({ user }) => {
           console.log(user)
+          resetFormFields()
+          navigate('home')
         },
         (error) => {
           console.log("Error logging in")
@@ -44,7 +49,7 @@ const SignInForm = () => {
   }
 
   return (
-    <div className='sign-up-container'>
+    <div className='form-container'>
       <form onSubmit={handleSubmit}>
 
         <FormInput
@@ -65,7 +70,7 @@ const SignInForm = () => {
           value={password}
         />
 
-        <Button button_type='inverted' type="submit">Sign Up</Button>
+        <Button button_type='inverted' type="submit">Login</Button>
       </form>
     </div>
   )
