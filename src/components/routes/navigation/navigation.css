@@ -1,0 +1,23 @@
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.navigation .back-button {
+  padding: 10px;
+}
+.navigation .logo-button {
+  font-family: brix;
+  font-size: 48px;
+}
+.navigation .logout-button {
+  padding: 10px;
+}
+
+.link-effects {
+  text-decoration: none;
+  color: #102060;
+}
+
+/*# sourceMappingURL=navigation.css.map */

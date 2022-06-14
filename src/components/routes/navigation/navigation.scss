@@ -1,0 +1,29 @@
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .back-button {
+    padding: 10px;
+  }
+  .logo-button {
+    font-family: brix;
+    font-size: 48px;
+  }
+  .logout-button {
+    padding: 10px;
+  }
+
+  //.logo-button:visited {
+  //  text-decoration: none;
+  //  color: black;
+  //}
+
+}
+
+.link-effects {
+  text-decoration: none;
+  color: #102060;
+}
+
